@@ -35,7 +35,7 @@ Um sistema completo para **cadastro, controle e exportação de informações de
 ```
 Sistema_Cadastro_Funcionarios/
 │
-├── Sistema_Registro_IA.py        # Arquivo principal (Tkinter)
+├── Sistema_Registro_de_colab.py  # Arquivo principal (Tkinter)
 ├── employees.db                  # Banco de dados (gerado automaticamente)
 ├── photos/                       # Pasta onde as fotos são salvas
 ├── logo.png                      # Logotipo opcional da empresa
