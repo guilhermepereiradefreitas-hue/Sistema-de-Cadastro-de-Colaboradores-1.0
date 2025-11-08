@@ -59,14 +59,14 @@ Sistema_Cadastro_Funcionarios/
 3. **Execute o sistema:**
 
    ```bash
-   python Sistema_Registro_IA.py
+   python Sistema_Registro_Colaboradores.py
    ```
 
 4. **(Opcional)**: Para gerar um executável `.exe`:
 
    ```bash
    pip install pyinstaller
-   pyinstaller --onefile --windowed Sistema_Registro_IA.py
+   pyinstaller --onefile --windowed Sistema_Registro_Colaboradores.py
    ```
 
 ---
@@ -125,4 +125,4 @@ Este projeto é de uso **livre para fins comerciais ou educacionais**, desde que
 
 ---
 
-© 2025 — Sistema de Registro DE Colaboradores. Todos os direitos reservados.
+© 2025 — Sistema de Registro de Colaboradores. Todos os direitos reservados.
