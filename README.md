@@ -59,7 +59,7 @@ pip install customtkinter pillow reportlab pywin32 openpyxl
 3. **Execute o sistema:**
 
    ```bash
-   python Sistema_Registro_IA.py
+   python Sistema_Registro_Caborador.py
    ```
 
 4. **(Opcional)**: Para gerar um executável `.exe`:
