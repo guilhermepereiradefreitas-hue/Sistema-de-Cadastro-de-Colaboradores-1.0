@@ -1,128 +1,116 @@
-# 🧾 Sistema de Cadastro de Colaboradores
+# 💼 Gestão de RH — Sistema de Colaboradores e Folha de Pagamento
 
-Um sistema completo para **cadastro, controle e exportação de informações de colaboradores**, desenvolvido em **Python (Tkinter)** com **banco de dados SQLite**.
+Sistema completo de **Gestão de Recursos Humanos** desenvolvido em **Python + CustomTkinter + SQLite + ReportLab**, com interface moderna, banco de dados local, geração de contracheques e controle de colaboradores.
 
----
+## 🖥️ Interface Moderna
+- Tema escuro com **CustomTkinter** (layout 16:9 centralizado)
+- Logo da empresa exibido automaticamente (`C:\GestaoRH\logo.png`)
+- Abas organizadas:
+  - **Colaboradores** → cadastro e edição completa
+  - **Registros** → tabela interativa com filtros, relatórios e exportações
 
-## 🚀 Recursos Principais
+## ⚙️ Funcionalidades Principais
 
-✅ Cadastro completo de funcionários com:
-- Nome, cidade, endereço, bairro, loja, cargo e salário  
-- Percentual de desconto e cálculo automático do salário líquido  
-- Data de admissão e fim de contrato  
-- Número, endereço da loja, CNPJ da loja e observações adicionais  
-- Upload e visualização da **foto do colaborador**
+### 👤 Aba “Colaboradores”
+- Layout em **3 colunas**, dividido por grupos de informações:
+  - **Coluna 1:** Dados pessoais do colaborador  
+  - **Coluna 2:** Dados salariais e contratuais  
+  - **Coluna 3:** Dados da empresa
+- Cálculo automático de **salário líquido**
+- CRUD completo (Salvar, Atualizar, Excluir, Limpar)
+- Geração de **contracheque em PDF corporativo**
+- Abertura automática do PDF após gerar
 
-✅ Banco de dados **SQLite** (arquivo local `employees.db`)
+### 📋 Aba “Registros”
+- Tabela `Treeview` com:
+  - **Efeito zebra** (linhas alternadas cinza-claro/escuro)
+  - **Scroll horizontal e vertical**
+  - **Edição direta nas células**
+  - **Ajuste automático de largura**
+- Botões de ações rápidas:
+  - 🔎 Filtrar registros (por nome ou cargo)
+  - 📄 Gerar contracheque direto
+  - 📤 Exportar para **PDF** ou **Excel**
+  - 💾 Criar **backup** do banco de dados
+- Integração direta com o banco `employees.db`
 
-✅ Exportação de relatórios:
-- **CSV** — para uso em planilhas simples  
-- **Excel (.xlsx)** — formato profissional, usando `pandas` e `openpyxl`  
-- **PDF** — relatório formatado, com possibilidade de exibir o logotipo da empresa
+### 🧱 Banco de Dados
+- SQLite local (arquivo: `C:\GestaoRH\employees.db`)
+- Tabela: **colaboradores**
+- Criação e atualização automáticas ao iniciar o sistema
+- Backup manual (botão na aba “Registros”)
 
-✅ Interface moderna com **temas `ttk`** e **layout responsivo**
+### 🧾 Contracheque (PDF)
+- Layout corporativo simples, limpo e assinado
+- Cabeçalho com logo e nome da empresa
+- Campos:
+  - Nome, cargo, empresa, salário bruto, líquido, abono e vale-transporte
+- Arquivo salvo automaticamente em:
+  ```
+  C:\GestaoRH\Contracheque_<NOME>.pdf
+  ```
+- Aberto automaticamente no leitor padrão
 
-✅ **Paginação e filtros de busca** (por nome, cargo e loja)
+## 🚀 Instalação
 
-✅ Salvamento automático de fotos na pasta `/photos`
+### 1️⃣ Instalar o Python
+Baixe e instale o [Python 3.10+](https://www.python.org/downloads/)  
+> ✅ Marque a opção *“Add Python to PATH”* durante a instalação.
 
-✅ Compatível com Windows, Linux e macOS
+### 2️⃣ Instalar dependências
+Abra o Prompt de Comando e execute:
 
----
+```bash
+pip install customtkinter pillow reportlab pywin32 openpyxl
+```
 
-## 🧩 Estrutura do Projeto
+### 3️⃣ Executar o sistema
+```bash
+python gestao_rh.py
+```
+
+Na primeira execução:
+- A pasta `C:\GestaoRH` será criada automaticamente.
+- Um logo de exemplo será gerado (`logo.png`).
+- O banco `employees.db` será inicializado.
+
+## 🧰 Estrutura de Pastas
 
 ```
-Sistema_Cadastro_Funcionarios/
-│
-├── Sistema_Registro_IA.py        # Arquivo principal (Tkinter)
-├── employees.db                  # Banco de dados (gerado automaticamente)
-├── photos/                       # Pasta onde as fotos são salvas
-├── logo.png                      # Logotipo opcional da empresa
-└── README.md                     # Este arquivo
+C:\
+ └── GestaoRH\
+      ├── gestao_rh.py          ← Aplicativo principal
+      ├── employees.db          ← Banco de dados SQLite
+      ├── logo.png              ← Logo da empresa
+      ├── Contracheque_*.pdf    ← PDFs gerados
+      └── backup\               ← (opcional) cópias de segurança
 ```
 
----
+## 💡 Atalhos úteis
 
-## ⚙️ Instalação e Execução
+| Ação | Atalho |
+|------|---------|
+| Salvar colaborador | **Ctrl + S** |
+| Gerar contracheque | **Ctrl + P** |
+| Atualizar tabela | **F5** |
+| Sair do sistema | **Ctrl + Q** |
 
-1. **Instale o Python 3.8+**
+## 🧠 Requisitos Técnicos
+- Python 3.10 ou superior  
+- Windows 10/11 (com suporte ao `pywin32`)
+- Resolução recomendada: **16:9 (1200x720 ou superior)**
 
-   [Baixar Python](https://www.python.org/downloads/)
+## 🔐 Segurança
+- Banco de dados local seguro e fechado ao sair.
+- Nenhum dado é enviado para a internet.
+- Backups podem ser gerados manualmente em um clique.
 
-2. **Instale as dependências:**
+## 🧩 Desenvolvido com
+- [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter)
+- [SQLite3](https://www.sqlite.org)
+- [ReportLab](https://www.reportlab.com)
+- [Pillow (PIL)](https://pillow.readthedocs.io)
 
-   ```bash
-   pip install pillow pandas openpyxl reportlab
-   ```
-
-3. **Execute o sistema:**
-
-   ```bash
-   python Sistema_Registro_IA.py
-   ```
-
-4. **(Opcional)**: Para gerar um executável `.exe`:
-
-   ```bash
-   pip install pyinstaller
-   pyinstaller --onefile --windowed Sistema_Registro_IA.py
-   ```
-
----
-
-## 🧮 Funcionalidades de Exportação
-
-| Formato | Descrição | Dependências |
-|----------|------------|---------------|
-| **CSV** | Arquivo separado por vírgulas, compatível com Excel/Google Sheets | Nenhuma |
-| **Excel (.xlsx)** | Relatório formatado e organizado em planilhas | `pandas`, `openpyxl` |
-| **PDF** | Relatório em PDF com logo e colunas principais | `reportlab` |
-
-> Todos os relatórios respeitam os **filtros de busca** aplicados no sistema.
-
----
-
-## 🖼️ Fotos e Logotipo
-
-- As **fotos dos colaboradores** são salvas automaticamente na pasta `photos/`.  
-- O **logotipo da empresa** pode ser carregado pelo menu superior e fica armazenado como `logo.png`.
-
----
-
-## 💡 Dicas de Uso
-
-- Clique em **Selecionar Foto** para anexar a imagem do colaborador.  
-- Use os campos de busca e o botão **Buscar** para filtrar os resultados.  
-- Use os botões **CSV / Excel / PDF** para exportar relatórios.  
-- A tabela de funcionários possui **barra de rolagem** e **paginação**.
-
----
-
-## 🧰 Tecnologias Utilizadas
-
-- **Python 3.8+**
-- **Tkinter (ttk themes)**
-- **SQLite3**
-- **Pandas / OpenPyXL / ReportLab / Pillow**
-
----
-
-## 🏢 Sobre o Projeto
-
-Este sistema foi criado para **empresas que precisam manter um registro organizado de funcionários**, com relatórios rápidos e interface intuitiva.
-
-Ele pode ser facilmente:
-- Adaptado para uso **em rede (intranet)** via **Flask**
-- Integrado com **planilhas financeiras**
-- Expandido com autenticação ou controle de acesso
-
----
-
-## 📄 Licença
-
-Este projeto é de uso **livre para fins comerciais ou educacionais**, desde que mantidos os créditos do autor original.
-
----
-
-© 2025 — Sistema de Registro DE Colaboradores. Todos os direitos reservados.
+## 🧾 Licença
+Projeto de uso interno e educacional.  
+© 2025 — Gestão RH Software by Guilherme Pereira.

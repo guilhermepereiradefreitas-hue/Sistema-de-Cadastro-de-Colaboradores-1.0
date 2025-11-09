@@ -1,0 +1,20 @@
+# 🧹 Git Ignore - Gestão RH
+
+# Banco de dados local
+*.db
+
+# PDFs e relatórios gerados
+*.pdf
+/relatorios/
+/backups/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Fotos e imagens temporárias
+/fotos_colaboradores/
+/assets_temp/
+
+# Configurações locais do sistema
+config.ini
