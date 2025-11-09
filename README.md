@@ -125,4 +125,4 @@ Este projeto é de uso **livre para fins comerciais ou educacionais**, desde que
 
 ---
 
-© 2025 — Sistema de Registro DE Colaboradores. Todos os direitos reservados.
+© 2025 — Gestão RH Software by Guilherme Pereira.
